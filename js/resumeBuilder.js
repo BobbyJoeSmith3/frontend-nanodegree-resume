@@ -123,7 +123,3 @@ $("#header").prepend(formattedEmail);
 $("#header").prepend(formattedLocation);
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
-
-// // 08 07 2017 21:29:44.276:
-// //  with unlimited concurrency
-// //  08 07 2017 21:29:44.520:
