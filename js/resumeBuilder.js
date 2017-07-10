@@ -150,3 +150,11 @@ function displayWork() {
   }
 }
 displayWork();
+
+// Collect page clicks
+// NOTE: function shell exists in helper.js as well, line 89
+$(document).click(function(loc) {
+  var x = loc.pageX;
+  var y = loc.pageY;
+  logClicks(x, y);
+});
