@@ -165,14 +165,15 @@ $(document).click(function(loc) {
 */
 $("#main").append(internationalizeButton);
 function inName(name) {
-  var nameArray = name.split(" ");
+  // trim to remove any white space
+  var nameArray = name.trim().split(" ");
   var formattedLastName = nameArray.pop().toUpperCase();
+  // use for each in case person has more than two names entered
   nameArray.forEach(function(item) {
     item.toLowerCase();
     item = item.charAt(0).toUpperCase() + item.slice(1);
   })
   var formattedFirstName = nameArray.join(" ");
-  // var formattedLastName = lastName.toUpperCase();
   var formattedIntName = formattedFirstName + " " + formattedLastName;
   return formattedIntName;
 }
