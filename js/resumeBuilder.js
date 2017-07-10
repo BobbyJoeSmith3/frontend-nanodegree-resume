@@ -109,11 +109,9 @@ var formattedWebsite = HTMLwebsite.replace("%data%", bio.contacts.website);
 var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 var formattedProfilePic = HTMLbioPic.replace("%data%", bio.biopic);
 var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-// var formattedSkills = HTMLskills.replace("%data%", bio.skills);
 
 // Prepend name and role so they go before unordered list
 // Order matters
-// $("#header").prepend(formattedSkills);
 $("#header").prepend(formattedWelcomeMessage);
 $("#header").prepend(formattedProfilePic);
 $("#header").prepend(formattedGithub);
@@ -125,6 +123,7 @@ $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 
 // FLOW CONTROL
+// Append skills in header if present in bio object
 if (bio.skills.length > 0) {
   $("#header").append(HTMLskillsStart);
   bio.skills.forEach(function(element) {
