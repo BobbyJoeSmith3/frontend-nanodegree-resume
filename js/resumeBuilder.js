@@ -158,3 +158,21 @@ $(document).click(function(loc) {
   var y = loc.pageY;
   logClicks(x, y);
 });
+
+/*
+1) Append internationalizeButton to the main div
+2) Create a function called inName() that takes in a string of two names and returns an internationalized version that looks like so: Cameron PITTMAN
+*/
+$("#main").append(internationalizeButton);
+function inName(name) {
+  var nameArray = name.split(" ");
+  var formattedLastName = nameArray.pop().toUpperCase();
+  nameArray.forEach(function(item) {
+    item.toLowerCase();
+    item = item.charAt(0).toUpperCase() + item.slice(1);
+  })
+  var formattedFirstName = nameArray.join(" ");
+  // var formattedLastName = lastName.toUpperCase();
+  var formattedIntName = formattedFirstName + " " + formattedLastName;
+  return formattedIntName;
+}
