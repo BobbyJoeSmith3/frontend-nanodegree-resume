@@ -131,3 +131,16 @@ if (bio.skills.length > 0) {
     $("#header").append(formattedSkill);
   });
 }
+
+/*
+1) Iterate over all jobs in work object and
+append a new HTMLworkStart element for each one
+2) format each job's employer with HTMLworkEmployer and each job title with HTMLworkTitle
+3) Append a concatenation of employer and title each to the element with class work-entry:last
+*/
+for (job in work.jobs) {
+  $("#workExperience").append(HTMLworkStart);
+  var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+  var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+  $(".work-entry:last").append(formattedEmployer, formattedTitle);
+}
