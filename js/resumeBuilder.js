@@ -201,3 +201,6 @@ projects.display = function() {
   }
 }
 projects.display();
+
+// Add google map of work locations
+$("#mapDiv").append(googleMap);
