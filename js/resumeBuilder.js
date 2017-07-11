@@ -52,19 +52,19 @@ var projects = {
       "title": "Aglaura",
       "dates": "Dec 2016 - Jan 2017",
       "description": "You ever roasted doughnuts? These kind of things only happen for the first time once.Did you feel that? Look at me - I'm not out of breath anymore!When you get lost in your imaginatory vagueness, your foresight will become a nimble vagrant.It's good to yell at people and tell people that you're from Tennesee, so that way you'll be safe.",
-      "images": []
+      "images": ["images/197x148.gif", "images/197x148.gif", "images/197x148.gif"]
     },
     {
       "title": "Ohunkakan",
       "dates": "Jan 2017 - May 2017",
       "description": "The magic Indian is a mysterious spiritual force, and we're going to Cathedral Rock, and that's the vortex of the heart. Sometimes horses cough and fart at the same time, so stay out of the range of its butt muscle because a horses butt muscle is thick.",
-      "images": []
+      "images": ["images/197x148.gif", "images/197x148.gif", "images/197x148.gif"]
     },
     {
       "title": "Red Emmas",
       "dates": "Feb 2017 - Mar 2017",
       "description": "The magic Indian is a mysterious spiritual force, and we're going to Cathedral Rock, and that's the vortex of the heart. Sometimes horses cough and fart at the same time, so stay out of the range of its butt muscle because a horses butt muscle is thick.",
-      "images": []
+      "images": ["images/197x148.gif", "images/197x148.gif", "images/197x148.gif"]
     },
   ]
 }
@@ -177,3 +177,27 @@ function inName(name) {
   var formattedIntName = formattedFirstName + " " + formattedLastName;
   return formattedIntName;
 }
+
+// Encapsulate display function inside projects object
+projects.display = function() {
+  for (project in projects.projects) {
+    $("#projects").append(HTMLprojectStart);
+    var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+    $(".project-entry:last").append(formattedTitle);
+    var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+    $(".project-entry:last").append(formattedDates);
+    var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+    $(".project-entry:last").append(formattedDescription);
+    if (projects.projects[project].images.length > 0) {
+      for (image in projects.projects[project].images) {
+        var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+        $(".project-entry:last").append(formattedImage);
+      }
+    }
+    // var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images.forEach(function(item)) {
+    //   return item;
+    // });
+    // $(".project-entry:last").append(formattedTitle + formattedDates + formattedDescription + formattedImage);
+  }
+}
+projects.display();
