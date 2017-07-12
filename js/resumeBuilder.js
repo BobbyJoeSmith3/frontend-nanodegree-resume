@@ -73,7 +73,6 @@ var work = {
       description: "Busey ipsum dolor sit amet. Go with the feeling of the nature. Take it easy. Know why you're here. And remember to balance your internal energy with the environment.You ever roasted doughnuts?Sometimes horses cough and fart at the same time, so stay out of the range of its butt muscle because a horses butt muscle is thick."
     }
   ],
-  // TODO: DISPLAY FUNCTION
   display: function() {
     work.jobs.forEach(function(element, index, array) {
       // Create Node
@@ -110,9 +109,26 @@ var projects = {
       dates: "Feb 2017 - Mar 2017",
       description: "The magic Indian is a mysterious spiritual force, and we're going to Cathedral Rock, and that's the vortex of the heart. Sometimes horses cough and fart at the same time, so stay out of the range of its butt muscle because a horses butt muscle is thick.",
       images: ["images/197x148.gif", "images/197x148.gif", "images/197x148.gif"]
-    },
-  ]
-  // TODO: DISPLAY FUNCTION
+    }
+  ],
+  display: function() {
+    projects.projects.forEach(function(element, index, array) {
+      // Create Node
+      $("#projects").append(HTMLprojectStart);
+      // Reformat Data
+      var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[index].title);
+      var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[index].dates);
+      var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[index].description);
+      // Append Node
+      $(".project-entry:last").append(formattedTitle + formattedDates + formattedDescription);
+      if (projects.projects[index].images.length > 0) {
+        projects.projects[index].images.forEach(function(element, index) {
+          var formattedImage = HTMLprojectImage.replace("%data%", element);
+          $(".project-entry:last").append(formattedImage);
+        });
+      };
+    });
+  }
 }
 
 // EDUCATION
@@ -174,28 +190,6 @@ function inName(name) {
   return formattedIntName;
 }
 
-// Encapsulate display function inside projects object
-projects.display = function() {
-  for (project in projects.projects) {
-    $("#projects").append(HTMLprojectStart);
-    var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
-    $(".project-entry:last").append(formattedTitle);
-    var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
-    $(".project-entry:last").append(formattedDates);
-    var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
-    $(".project-entry:last").append(formattedDescription);
-    if (projects.projects[project].images.length > 0) {
-      for (image in projects.projects[project].images) {
-        var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
-        $(".project-entry:last").append(formattedImage);
-      }
-    }
-    // var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images.forEach(function(item)) {
-    //   return item;
-    // });
-    // $(".project-entry:last").append(formattedTitle + formattedDates + formattedDescription + formattedImage);
-  }
-}
 
 // CALL DISPLAY METHODS
 bio.display();
