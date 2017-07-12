@@ -72,9 +72,23 @@ var work = {
       dates: "May 2014 - Sept 2014",
       description: "Busey ipsum dolor sit amet. Go with the feeling of the nature. Take it easy. Know why you're here. And remember to balance your internal energy with the environment.You ever roasted doughnuts?Sometimes horses cough and fart at the same time, so stay out of the range of its butt muscle because a horses butt muscle is thick."
     }
-  ]
+  ],
   // TODO: DISPLAY FUNCTION
-}
+  display: function() {
+    work.jobs.forEach(function(element, index, array) {
+      // Create Node
+      $("#workExperience").append(HTMLworkStart);
+      // Populate data
+      var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[index].employer);
+      var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[index].title);
+      var formattedDates = HTMLworkDates.replace("%data%", work.jobs[index].dates);
+      var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[index].location);
+      var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[index].description);
+      // Append Node
+      $(".work-entry:last").append(formattedEmployer + formattedTitle + formattedDates + formattedLocation + formattedDescription);
+    });
+  }
+};
 
 // PROJECTS
 var projects = {
@@ -133,25 +147,6 @@ var education = {
   // TODO: DISPLAY FUNCTION
 };
 
-/*
-1) Iterate over all jobs in work object and
-append a new HTMLworkStart element for each one
-2) format each job's employer with HTMLworkEmployer and each job title with HTMLworkTitle
-3) Append a concatenation of employer and title each to the element with class work-entry:last
-*/
-function displayWork() {
-  for (job in work.jobs) {
-    $("#workExperience").append(HTMLworkStart);
-    var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-    var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-    var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-    var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-    var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-    $(".work-entry:last").append(formattedEmployer + formattedTitle + formattedDates + formattedLocation + formattedDescription);
-  }
-}
-displayWork();
-
 // Collect page clicks
 // NOTE: function shell exists in helper.js as well, line 89
 $(document).click(function(loc) {
@@ -204,6 +199,7 @@ projects.display = function() {
 
 // CALL DISPLAY METHODS
 bio.display();
+work.display();
 projects.display();
 
 // Add google map of work locations
