@@ -13,9 +13,9 @@ var bio = {
     "website": "bobbyjoesmith.com",
     "location": "North Dakota"
   },
-  "biopic": "https://cdnb.artstation.com/p/assets/images/images/001/863/575/large/irakli-nadar-artstation-da.jpg?1453903033",
   "welcomeMessage": "Welcome to Bobby Joe 3.0's resumé. Inside you will find all kinds of information about Bobby Joe's professional exploits. Hopefully, you'll find something that interests you. Take a look!",
-  "skills": ["graphic design", "photography", "arduino", "computer programming", "web development"]
+  "skills": ["graphic design", "photography", "videography", "computer programming", "web development"],
+  "biopic": "images/fry.jpg"
 };
 
 // WORK
