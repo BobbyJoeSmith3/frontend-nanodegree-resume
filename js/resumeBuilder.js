@@ -16,6 +16,7 @@ var bio = {
   "welcomeMessage": "Welcome to Bobby Joe 3.0's resumé. Inside you will find all kinds of information about Bobby Joe's professional exploits. Hopefully, you'll find something that interests you. Take a look!",
   "skills": ["graphic design", "photography", "videography", "computer programming", "web development"],
   "biopic": "images/fry.jpg"
+  // TODO: DISPLAY FUNCTION
 };
 
 // WORK
@@ -43,6 +44,7 @@ var work = {
       "description": "Busey ipsum dolor sit amet. Go with the feeling of the nature. Take it easy. Know why you're here. And remember to balance your internal energy with the environment.You ever roasted doughnuts?Sometimes horses cough and fart at the same time, so stay out of the range of its butt muscle because a horses butt muscle is thick."
     }
   ]
+  // TODO: DISPLAY FUNCTION
 }
 
 // PROJECTS
@@ -67,6 +69,7 @@ var projects = {
       "images": ["images/197x148.gif", "images/197x148.gif", "images/197x148.gif"]
     },
   ]
+  // TODO: DISPLAY FUNCTION
 }
 
 // EDUCATION
@@ -78,7 +81,7 @@ var education = {
       "degree": "MFA",
       "majors": ["Graphic Design"],
       "url": "www.risd.edu",
-      "years": "2017-Present"
+      "dates": "2017-Present"
     },
     {
       "name": "Maryland Institute College of Art",
@@ -86,7 +89,7 @@ var education = {
       "degree": "Post-Baccalaureate Certificate",
       "majors": ["Graphic Design"],
       "url": "www.mica.edu",
-      "years": "2016-2017"
+      "dates": "2016-2017"
     },
     {
       "name": "Middlebury College",
@@ -94,9 +97,11 @@ var education = {
       "degree": "BA",
       "majors": ["Philosophy", "Political Science"],
       "url": "www.middlebury.edu",
-      "years": "2005-2010"
+      "dates": "2005-2010"
     }
   ]
+  // TODO: ONLINE COURSES [ title: string, school: string, dates: string, url: string]
+  // TODO: DISPLAY FUNCTION
 };
 
 // DATA REPLACEMENTS
