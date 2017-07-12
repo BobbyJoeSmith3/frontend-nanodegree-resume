@@ -158,6 +158,26 @@ var education = {
       url: "www.middlebury.edu",
       dates: "2005-2010"
     }
+  ],
+  onlineCourse: [
+    {
+      name: "Frontend Nanodegree",
+      school: "Udacity",
+      dates: "May 2017 - Jul 2017",
+      url: "udacity.com"
+    },
+    {
+      name: "The Nature of Code",
+      school: "Kadenze: NYU",
+      dates: "Oct 2016 - Dec 2016",
+      url: "kadenze.com"
+    },
+    {
+      name: "Intro to the Internet of Things",
+      school: "Coursera: UCSB",
+      dates: "Feb 2016 - May 2016",
+      url: "coursera.org"
+    }
   ]
   // TODO: ONLINE COURSES [ title: string, school: string, dates: string, url: string]
   // TODO: DISPLAY FUNCTION
