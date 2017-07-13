@@ -20,7 +20,8 @@ h6 {
 
 .education-entry,
 .work-entry,
-.project-entry {
+.project-entry,
+.online-entry {
   padding: 0 5%;
 }
 
@@ -173,6 +174,16 @@ span {
 
 #lets-connect {
   text-align: center;
+}
+
+/* My Style */
+.online-classes-header {
+  padding-bottom: 0px;
+  padding-top: 25px;
+}
+
+.online-url {
+  margin-top: 0px;
 }
 
 /* Media queries to handle various device widths */

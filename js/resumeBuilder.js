@@ -196,10 +196,23 @@ var education = {
       // Order matters: name, degree, dates, location, majors
       $(".education-entry:last").append(formattedName + formattedDegree + formattedDates + formattedLocation + formattedMajors);
     });
+    // Online Courses Header
+    $("#education").append(HTMLonlineClasses);
+    education.onlineCourse.forEach(function(element, index) {
+      // Create Node
+      $("#education").append(HTMLonlineStart);
+      // Format Data
+      // title(name), school, dates, url
+      var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourse[index].name);
+      var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourse[index].school);
+      var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourse[index].dates);
+      var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourse[index].url);
+      // Append Nodes
+      $(".online-entry:last").append(formattedTitle + formattedSchool + formattedDates + formattedURL);
+    })
   }
   // TODO: DISPLAY FUNCTION
 };
-education.display();
 
 // Collect page clicks
 // NOTE: function shell exists in helper.js as well, line 89
