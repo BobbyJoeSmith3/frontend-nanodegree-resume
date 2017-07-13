@@ -178,10 +178,28 @@ var education = {
       dates: "Feb 2016 - May 2016",
       url: "coursera.org"
     }
-  ]
-  // TODO: ONLINE COURSES [ title: string, school: string, dates: string, url: string]
+  ],
+  display: function() {
+    // Display Education Section
+    education.schools.forEach(function(element, index) {
+      // Create Node
+      $("#education").append(HTMLschoolStart);
+      // Format Data
+      // name, location, degree, majors, url, dates
+      var formattedName = HTMLschoolName.replace("%data%", education.schools[index].name);
+      var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[index].location);
+      var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[index].degree);
+      var formattedMajors = HTMLschoolMajor.replace("%data%", education.schools[index].majors);
+      var formattedURL = HTMLonlineURL.replace("%data%", education.schools[index].url); // OPTIONAL
+      var formattedDates = HTMLschoolDates.replace("%data%", education.schools[index].dates);
+      // Append Nodes
+      // Order matters: name, degree, dates, location, majors
+      $(".education-entry:last").append(formattedName + formattedDegree + formattedDates + formattedLocation + formattedMajors);
+    });
+  }
   // TODO: DISPLAY FUNCTION
 };
+education.display();
 
 // Collect page clicks
 // NOTE: function shell exists in helper.js as well, line 89
@@ -215,6 +233,7 @@ function inName(name) {
 bio.display();
 work.display();
 projects.display();
+education.display();
 
 // Add google map of work locations
 $("#mapDiv").append(googleMap);
