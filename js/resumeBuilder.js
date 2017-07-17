@@ -131,10 +131,10 @@ var projects = {
           var formattedImage = HTMLprojectImage.replace("%data%", element);
           $(".project-entry:last").append(formattedImage);
         });
-      };
+      }
     });
   }
-}
+};
 
 // EDUCATION
 var education = {
@@ -214,7 +214,7 @@ var education = {
       var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourse[index].url);
       // Append Nodes
       $(".online-entry:last").append(formattedTitle + formattedSchool + formattedDates + formattedURL);
-    })
+    });
   }
   // TODO: DISPLAY FUNCTION
 };
@@ -240,7 +240,7 @@ function inName(name) {
   nameArray.forEach(function(item) {
     item.toLowerCase();
     item = item.charAt(0).toUpperCase() + item.slice(1);
-  })
+  });
   var formattedFirstName = nameArray.join(" ");
   var formattedIntName = formattedFirstName + " " + formattedLastName;
   return formattedIntName;
