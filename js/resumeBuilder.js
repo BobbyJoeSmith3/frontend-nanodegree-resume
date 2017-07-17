@@ -37,6 +37,11 @@ var bio = {
     $("#topContacts").prepend(formattedMobile);
     $("#topContacts").prepend(formattedEmail);
     $("#topContacts").prepend(formattedLocation);
+    $("#footerContacts").prepend(formattedGithub);
+    $("#footerContacts").prepend(formattedWebsite);
+    $("#footerContacts").prepend(formattedMobile);
+    $("#footerContacts").prepend(formattedEmail);
+    $("#footerContacts").prepend(formattedLocation);
     // Append skills if available
     if (bio.skills.length > 0) {
       $("#header").append(HTMLskillsStart);
