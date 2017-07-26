@@ -164,21 +164,21 @@ var education = {
       dates: "2005-2010"
     }
   ],
-  onlineCourse: [
+  onlineCourses: [
     {
-      name: "Frontend Nanodegree",
+      title: "Frontend Nanodegree",
       school: "Udacity",
       dates: "May 2017 - Jul 2017",
       url: "udacity.com"
     },
     {
-      name: "The Nature of Code",
+      title: "The Nature of Code",
       school: "Kadenze: NYU",
       dates: "Oct 2016 - Dec 2016",
       url: "kadenze.com"
     },
     {
-      name: "Intro to the Internet of Things",
+      title: "Intro to the Internet of Things",
       school: "Coursera: UCSB",
       dates: "Feb 2016 - May 2016",
       url: "coursera.org"
@@ -203,15 +203,15 @@ var education = {
     });
     // Online Courses Header
     $("#education").append(HTMLonlineClasses);
-    education.onlineCourse.forEach(function(element, index) {
+    education.onlineCourses.forEach(function(element, index) {
       // Create Node
       $("#education").append(HTMLonlineStart);
       // Format Data
       // title(name), school, dates, url
-      var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourse[index].name);
-      var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourse[index].school);
-      var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourse[index].dates);
-      var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourse[index].url);
+      var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[index].title);
+      var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[index].school);
+      var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[index].dates);
+      var formattedURL = HTMLonlineURL.replace("%data%", education.onlineCourses[index].url);
       // Append Nodes
       $(".online-entry:last").append(formattedTitle + formattedSchool + formattedDates + formattedURL);
     });
