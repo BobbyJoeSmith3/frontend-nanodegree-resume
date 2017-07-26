@@ -28,20 +28,8 @@ var bio = {
     var formattedProfilePic = HTMLbioPic.replace("%data%", bio.biopic);
     var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
     // Append data
-    $("#header").prepend(formattedWelcomeMessage);
-    $("#header").prepend(formattedProfilePic);
-    $("#header").prepend(formattedRole);
-    $("#header").prepend(formattedName);
-    $("#topContacts").prepend(formattedGithub);
-    $("#topContacts").prepend(formattedWebsite);
-    $("#topContacts").prepend(formattedMobile);
-    $("#topContacts").prepend(formattedEmail);
-    $("#topContacts").prepend(formattedLocation);
-    $("#footerContacts").prepend(formattedGithub);
-    $("#footerContacts").prepend(formattedWebsite);
-    $("#footerContacts").prepend(formattedMobile);
-    $("#footerContacts").prepend(formattedEmail);
-    $("#footerContacts").prepend(formattedLocation);
+    $("#header").prepend(formattedName, formattedRole, formattedProfilePic, formattedWelcomeMessage);
+    $("#topContacts, #footerContacts").append(formattedLocation, formattedEmail, formattedMobile, formattedWebsite, formattedGithub);
     // Append skills if available
     if (bio.skills.length > 0) {
       $("#header").append(HTMLskillsStart);
